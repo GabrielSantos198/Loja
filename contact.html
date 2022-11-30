@@ -18,6 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
     <header id="mobile-header">
@@ -64,11 +65,11 @@
 
         <nav>
           <ul>
-            <li><a href="/">Início</a></li>
+            <li><a href="index.html">Início</a></li>
             <li><a href="store.html">Loja</a></li>
             <li><a href="about.html">Sobre</a></li>
-            <li><a href="#featured-products">Destaques de Produtos</a></li>
-            <li><a href="contact.html">Contato</a></li>
+            <li><a href="index.html#featured-products">Destaques de Produtos</a></li>
+            <li><a href="#">Contato</a></li>
             <li><a href="blog.html">Blog</a></li>
           </ul>
         </nav>
@@ -102,11 +103,11 @@
         <span><a href="">Bizu Variedades</a></span>
         <nav>
           <ul class="d-flex list-unstyled">
-            <li><a href="/">Início</a></li>
+            <li><a href="index.html">Início</a></li>
             <li><a href="store.html">Loja</a></li>
             <li><a href="about.html">Sobre</a></li>
-            <li><a href="#featured-products">Destaques de Produtos</a></li>
-            <li><a href="contact.html">Contato</a></li>
+            <li><a href="index.html#featured-products">Destaques de Produtos</a></li>
+            <li><a href="#">Contato</a></li>
             <li><a href="blog.html">Blog</a></li>
           </ul>
         </nav>
@@ -119,90 +120,36 @@
     </header>
 
     <main>
-      <!-- Slide Carousel -->
-      <div class="container-fluid">
-        <div id="mainSlide" class="carousel slide" data-bs-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-bs-target="#mainSlide" data-bs-slide-to="0" class="active" role="button"></li>
-            <li data-bs-target="#mainSlide" data-bs-slide-to="1" role="button"></li>
-            <li data-bs-target="#mainSlide" data-bs-slide-to="2" role="button"></li>
-          </ol>
-
-          <!-- Carousel body -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="carousel-caption">
-                <h5>NEW ARRIVALS</h5>
-                <p>Sit vero eveniet eveniet sint laudantium.</p>
-                <a href="">COMPRAR AGORA</a>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="carousel-caption">
-                <h5>NEW ARRIVALS</h5>
-                <p>Sit vero eveniet eveniet sint laudantium.</p>
-                <a href="">COMPRAR AGORA</a>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="carousel-caption">
-                <h5>NEW ARRIVALS</h5>
-                <p>Sit vero eveniet eveniet sint laudantium.</p>
-                <a href="">COMPRAR AGORA</a>
-              </div>
-            </div>
+      <div class="top-banner">
+          <h2>CONTATO</h2>
+      </div>
+      <div class="contact-body container d-flex justify-content-center">
+        <div class="row align-items-center">
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <iframe class="d-block m-auto" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.9303532461595!2d-35.88749972406382!3d-7.248767392757745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ac1e77ac052899%3A0x634fb821becf5ed8!2sR.%20S%C3%A3o%20Judas%20Tadeu%20-%20Catol%C3%A9%2C%20Campina%20Grande%20-%20PB%2C%2058410-547!5e0!3m2!1spt-BR!2sbr!4v1669844555745!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-
-          <!-- Controls -->
-          <a class="carousel-control-prev" href="#mainSlide" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </a>
-          <a class="carousel-control-next" href="#mainSlide" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </a>
+          <div class="col-sm-12 col-md-6 col-lg-8">
+            <h1>Envie sua mensagem</h1>
+            <form action="">
+              <div class="row g-3">
+                <div class="col-sm-12 col-lg-6">
+                  <input type="text" placeholder="Nome" class="form-control">
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                  <input type="email" placeholder="E-mail" class="form-control">
+                </div>
+                <div class="col-sm-12">
+                  <input type="text" placeholder="Assunto" class="form-control">
+                </div>
+                <div class="col-sm-12">
+                  <textarea placeholder="Sua mensagem" name="" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <input type="submit" value="Enviar" class="btn btn-success">
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-
-      <div class="container">
-        <!-- Categories -->
-        <section class="categories">
-          <div class="category"><img src="imgs/banner-02.jpg" alt=""><a class="btn btn-light" href="">Vestidos</a></div>
-          <div class="category"><img src="imgs/banner-03.jpg" alt=""><a class="btn btn-light" href="">Relógios</a></div>
-          <div class="category"><img src="imgs/banner-04.jpg" alt=""><a class="btn btn-light" href="">Mochilas</a></div>
-          <div class="category"><img src="imgs/banner-05.jpg" alt=""><a class="btn btn-light" href="">Óculos</a></div>
-          <div class="category"><img src="imgs/banner-07.jpg" alt=""><a class="btn btn-light" href="">Ténis</a></div>
-          <div class="category"><img src="imgs/camisas.png" alt=""><a class="btn btn-light" href="">Camisas</a></div>
-        </section>
-
-        <!-- Featured Products -->
-        <section id="featured-products" class="featured-products">
-            <h5>DESTAQUES DE PRODUTOS</h5>
-            <div class="featured-products-slide">
-              <div class="featured-slide-item"><img src="imgs/banner-02.jpg" alt=""><p class="instagram-post-text">Amet repellendus dolor sequi obcaecati assumenda.</p><a class="btn btn-success" href="">VISITAR</a></div>
-              <div class="featured-slide-item"><img src="imgs/fundo.jpg" alt=""><p class="instagram-post-text">Amet repellendus dolor sequi obcaecati assumenda.</p><a class="btn btn-success" href="">VISITAR</a></div>
-              <div class="featured-slide-item"><img src="imgs/fundo.jpg" alt=""><p class="instagram-post-text">Amet repellendus dolor sequi obcaecati assumenda.</p><a class="btn btn-success" href="">VISITAR</a></div>
-              <div class="featured-slide-item"><img src="imgs/fundo.jpg" alt=""><p class="instagram-post-text">Amet repellendus dolor sequi obcaecati assumenda.</p><a class="btn btn-success" href="">VISITAR</a></div>
-              <div class="featured-slide-item"><img src="imgs/fundo.jpg" alt=""><p class="instagram-post-text">Amet repellendus dolor sequi obcaecati assumenda.</p><a class="btn btn-success" href="">VISITAR</a></div>
-              <div class="featured-slide-item"><img src="imgs/fundo.jpg" alt=""><p class="instagram-post-text">Amet repellendus dolor sequi obcaecati assumenda.</p><a class="btn btn-success" href="">VISITAR</a></div>
-              <div class="featured-slide-item"><img src="imgs/fundo.jpg" alt=""><p class="instagram-post-text">Amet repellendus dolor sequi obcaecati assumenda.</p><a class="btn btn-success" href="">VISITAR</a></div>
-            </div>
-        </section>
-      </div>
-
-      <!-- Instagram -->
-      <section class="instagram">
-        <h5>@ SIGANOS NO INSTAGRAM</h5>
-        <a href="#">
-          <div>
-            <div class="instagram-post"><img src="imgs/fundo.jpg" alt=""><p>Ipsum asperioresporibus pariatur vero perferendis? Modi unde magnam qui temporibus dolore Necessitatibus repellat cumque quod porro maxime commodi Totam.</p></div>
-            <div class="instagram-post"><img src="imgs/fundo.jpg" alt=""><p>Ipsum asperioresporibus pariatur vero perferendis? Modi unde magnam qui temporibus dolore Necessitatibus repellat cumque quod porro maxime commodi Totam.</p></div>
-            <div class="instagram-post"><img src="imgs/banner-07.jpg" alt=""><p>Ipsum asperioresporibus pariatur vero perferendis? Modi unde magnam qui temporibus dolore Necessitatibus repellat cumque quod porro maxime commodi Totam.</p></div>
-            <div class="instagram-post"><img src="imgs/banner-07.jpg" alt=""><p>Ipsum asperioresporibus pariatur vero perferendis? Modi unde magnam qui temporibus dolore Necessitatibus repellat cumque quod porro maxime commodi Totam.</p></div>
-            <div class="instagram-post"><img src="imgs/banner-07.jpg" alt=""><p>Ipsum asperioresporibus pariatur vero perferendis? Modi unde magnam qui temporibus dolore Necessitatibus repellat cumque quod porro maxime commodi Totam.</p></div>
-          </div>
-        </a>
-      </section>
     </main>
 
     <footer>
@@ -234,10 +181,10 @@
           <div class="col-sm-12 col-lg-3">
             <h5>LINKS</h5>
             <ul class="links-list list-unstyled">
-              <li><a href="/">Início</a></li>
+              <li><a href="index.html">Início</a></li>
               <li><a href="store.html">Loja</a></li>
               <li><a href="about.html">Sobre</a></li>
-              <li><a href="#featured-products">Destaques de Produtos</a></li>
+              <li><a href="index.html#featured-products">Destaques de Produtos</a></li>
               <li><a href="blog.html">Blog</a></li>
             </ul>
           </div>
@@ -260,4 +207,6 @@
     <script src="js/scripts.js"></script>
   </body>
 </html>
+
+
 

@@ -46,7 +46,7 @@ a:hover{
 }
 
 .topbar .topbar-icons a{
-  opacity: .5
+  color: gray;
 }
 
 /* Hamburger */
@@ -121,26 +121,40 @@ input:checked ~ label .hamburger-icon:after{
   padding-left: 20px;
   display: flex;
   flex-direction: column;
-  opacity: .5;
 }
 
 .dropdown .search{
   width: 370px;
   height: 35px;
   font-size: 17px;
-  border: 1px solid grey;
+  color: gray;
+}
+
+.translateAndtheme{
+  margin-top: 25px;
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.translateAndtheme:hover{
+  cursor: pointer;
+}
+
+.theme{
+  font-size: 20px;
 }
 
 .dropdown-top select{
-  margin-top: 25px;
   width: 100px;
-  height: 25px;
+  height: 30px;
+  opacity: .5;
 }
 
 .dropdown-top hr{
   width: 50px;
   margin-bottom: 5px;
-  color: #000;
+  color: gray;
   opacity: 1;
 }
 
@@ -151,6 +165,7 @@ input:checked ~ label .hamburger-icon:after{
 .dropdown .dropdown-top .social-midia a{
   font-size: 18px;
   margin-right: 10px;
+  color: gray;
 }
 
 .dropdown nav{
@@ -326,7 +341,7 @@ footer a:hover{
 }
 
 footer p{
-  opacity: .5;
+  color: gray
 }
 
 footer p:last-child{
@@ -341,15 +356,67 @@ footer h5{
 footer .social-midia a{
   font-size: 18px;
   margin-right: 10px;
-  opacity: .5;
+  color: gray;
 }
 
-footer .links-list{
-  opacity: .5;
+footer .social-midia a:hover{
+  color: #E65540;
+}
+
+footer .links-list li a{
+  color: gray;
+}
+
+footer .links-list li a:hover{
+  color: #E65540;
 }
 
 
-/* Responsive */
+/* ----------------------- */
+      /* About */
+/* ----------------------- */
+.top-banner{
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../imgs/business.jpg");
+}
+
+.top-banner h2{
+  color: #FFF;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 160px;
+  font-weight: bold;
+}
+
+.about-body, .contact-body{
+  margin-top: 50px;
+}
+
+.about-body div h1, .contact-body div h1{
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-top: 30px;
+}
+
+.about-body div p, .contact-body div p{
+  color: gray;
+}
+
+.about-body img{
+  max-height: 400px;
+}
+
+.contact-body iframe{
+  height: 400px;
+}
+
+
+/* ----------------------- */
+      /* Responsive */
+/* ----------------------- */
 @media (min-width: 520px){
   .instagram .instagram-post{
     width: 50%;
@@ -388,10 +455,12 @@ footer .links-list{
   #all-desktop-header{
     display: block;
   }
+
   .desktop-header-top{
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #f0f0f0;
   }
 
@@ -399,10 +468,18 @@ footer .links-list{
     padding: 3px;
   }
 
+  .desktop-header-top select{
+    opacity: .5;
+  }
+
+  .translateAndtheme{
+    margin-top: 0;
+  }
+
   .desktop-header-top .topbar-icons a{
     font-size: 18px;
     margin-right: 10px;
-    opacity: .5;
+    color: gray
   }
 
  .topbar-icons a:hover{
@@ -410,13 +487,13 @@ footer .links-list{
   }
 
   .desktop-header{
-  width: 100%;
-  height: 80px;
-  font-size: 25px;
-  background-color: #FFF;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+    width: 100%;
+    height: 80px;
+    font-size: 25px;
+    background-color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
   }
 
   .desktop-header span{
