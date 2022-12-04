@@ -7,8 +7,8 @@
 
 a{
   cursor: pointer;
-  color: #000;
   text-decoration: none;
+  color: #000;
 }
 
 a:hover{
@@ -23,17 +23,16 @@ a:hover{
   width: 100%;
   height: 80px;
   font-size: 25px;
-  background-color: #FFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
 }
 
-.topbar span{
+.topbar span a{
   font-family: 'Anton', sans-serif;
-  color: #000;
   font-size: 30px;
+  color: #000;
 }
 
 .topbar .topbar-icons{
@@ -72,7 +71,6 @@ a:hover{
   z-index: 2;
 }
 
-
 .hamburger-icon:before, .hamburger-icon:after{
   background: #000;
   content: '';
@@ -82,7 +80,6 @@ a:hover{
   position: absolute;
   transition: .3s;
 }
-
 
 .hamburger-icon:before{
   top: -8px;
@@ -137,12 +134,16 @@ input:checked ~ label .hamburger-icon:after{
   justify-content: space-between;
 }
 
-.translateAndtheme:hover{
+.bi-moon-stars-fill:hover, .bi-brightness-high:hover{
   cursor: pointer;
 }
 
 .theme{
   font-size: 20px;
+}
+
+#ThemeChk{
+  display: none;
 }
 
 .dropdown-top select{
@@ -303,6 +304,7 @@ main .categories a:hover{
 }
 
 .instagram-post{
+  background-color: #000;
   position: relative;
   width: 100%;
 }
@@ -313,6 +315,7 @@ main .categories a:hover{
 }
 
 .instagram-post p{
+  color: #fff;
   position: absolute;
   top: 30%;
   padding: 20px;
@@ -333,7 +336,7 @@ main .categories a:hover{
 footer{
   background-color: #f0f0f0;
   margin-top: 70px;
-  padding: 55px 20px 0 20px;;
+  padding: 55px 20px 5px 20px;;
 }
 
 footer a:hover{
@@ -381,7 +384,7 @@ footer .links-list li a:hover{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../imgs/business.jpg");
+  background-image: url("../imgs/office.jpg");
 }
 
 .top-banner h2{
@@ -415,6 +418,59 @@ footer .links-list li a:hover{
 
 
 /* ----------------------- */
+      /* Config */
+/* ----------------------- */
+.procfile-config-image img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.procfile-config-image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back{
+  text-align: center;
+}
+
+
+/* ----------------------- */
+      /* Dark  */
+/* ----------------------- */
+.dark{
+  background-color: #121212;
+  color: #fff;
+}
+
+.dark .topbar span a, .dark .desktop-header span a, .dark .desktop-header nav ul li a, .dark .desktop-header div a{
+  color: #fff;
+}
+
+.dark .theme{
+  color: #fff;
+}
+
+.dark .hamburger-icon{
+  background: #fff;
+}
+
+.dark footer{
+  background-color: #343A40;
+}
+
+.dark .desktop-header-top{
+  background-color: #343A40;
+}
+
+.dark .hamburger-icon:before, .dark .hamburger-icon:after{
+  background: #fff;
+}
+
+
+/* ----------------------- */
       /* Responsive */
 /* ----------------------- */
 @media (min-width: 520px){
@@ -443,6 +499,11 @@ footer .links-list li a:hover{
   .instagram .instagram-post img{
     height: 350px;
   }
+
+  .config-form{
+    width: 50%;
+  }
+
 }
 
 
@@ -479,7 +540,7 @@ footer .links-list li a:hover{
   .desktop-header-top .topbar-icons a{
     font-size: 18px;
     margin-right: 10px;
-    color: gray
+    color: gray;
   }
 
  .topbar-icons a:hover{
@@ -490,7 +551,6 @@ footer .links-list li a:hover{
     width: 100%;
     height: 80px;
     font-size: 25px;
-    background-color: #FFF;
     display: flex;
     justify-content: space-between;
     padding: 20px;

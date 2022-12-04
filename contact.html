@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="dark">
     <header id="mobile-header">
       <!-- TopBar -->
       <section class="topbar">
@@ -50,7 +50,12 @@
               <option value="">Inglẽs</option>
               <option value="">Portuguẽs</option>
             </select>
-            <div class="theme bi bi-moon-stars-fill"></div>
+            <div class="theme">
+              <input type="checkbox" id="ThemeChk">
+              <label for="ThemeChk">
+                <li onclick=theme() class="bi bi-moon-stars-fill"></li>
+              </label>
+            </div>
           </div>
 
           <div class="social-midia">
@@ -89,7 +94,12 @@
         <input placeholder="  Buscar" class="search" type="search">
 
         <div class="translateAndtheme">
-          <div class="theme bi bi-moon-stars-fill"></div>
+          <div class="theme">
+            <input type="checkbox" id="ThemeChk">
+            <label for="ThemeChk">
+              <li onclick=theme() class="bi bi-moon-stars-fill"></li>
+            </label>
+          </div>
           <select id="" name="">
             <option value="">Traduzir</option>
             <option value="">Inglẽs</option>
@@ -117,6 +127,7 @@
           <a href=""><i class="bi bi-bag"></i></a>
         </div>
       </div>
+    
     </header>
 
     <main>
@@ -133,16 +144,16 @@
             <form action="">
               <div class="row g-3">
                 <div class="col-sm-12 col-lg-6">
-                  <input type="text" placeholder="Nome" class="form-control">
+                  <input type="text" placeholder="Nome" required="required" class="form-control">
                 </div>
                 <div class="col-sm-12 col-lg-6">
-                  <input type="email" placeholder="E-mail" class="form-control">
+                  <input type="email" placeholder="E-mail" required="required" class="form-control">
                 </div>
                 <div class="col-sm-12">
-                  <input type="text" placeholder="Assunto" class="form-control">
+                  <input type="text" placeholder="Assunto" required="required" class="form-control">
                 </div>
                 <div class="col-sm-12">
-                  <textarea placeholder="Sua mensagem" name="" cols="30" rows="10" class="form-control"></textarea>
+                  <textarea placeholder="Sua mensagem" name="" cols="30" rows="10" required="required" class="form-control"></textarea>
                 </div>
                 <input type="submit" value="Enviar" class="btn btn-success">
               </div>
@@ -193,7 +204,7 @@
             <h5>AJUDA</h5>
             <ul class="links-list list-unstyled">
               <li><a href="">Acompanhar Pedido</a></li>
-              <li><a href="">Suporte</a></li>
+              <li><a href="#">Suporte</a></li>
               <li><a href="">FaQs</a></li>
             </ul>
           </div>
