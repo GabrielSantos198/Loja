@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -8,23 +9,22 @@
     <meta name="description" content="...">
     <meta name="keywords" content="...">
     <meta name="copyright" content="© Gabriel Santana">
-    <title>Bizu Variedades</title>
+    <title>{% block title %}Bizu Variedades{% endblock title %}</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
   </head>
-  <body class="dark">
+  <body>
     <header id="mobile-header">
       <!-- TopBar -->
       <section class="topbar">
-        <span><a href="index.html">Bizu Variedades</a></span>
+        <span><a href="/">Bizu Variedades</a></span>
 
         <div class="topbar-icons">
           <a href=""><i class="bi bi-person-circle"></i></a>
@@ -70,17 +70,17 @@
 
         <nav>
           <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="store.html">Loja</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="index.html#featured-products">Destaques de Produtos</a></li>
-            <li><a href="contact.html">Contato</a></li>
+            <li><a href="{% url 'products:home' %}">Início</a></li>
+            <li><a href="{% url 'products:products' %}">Loja</a></li>
+            <li><a href="{% url 'page:about' %}">Sobre</a></li>
+            <li><a href="{% url 'products:home' %}#featured-products">Destaques de Produtos</a></li>
+            <li><a href="{% url 'page:contact' %}">Contato</a></li>
             <li><a href="blog.html">Blog</a></li>
           </ul>
         </nav>
       </section>
     </header>
-    
+
     <!-- Desktop Header -->
     <header id="all-desktop-header">
       <div class="desktop-header-top">
@@ -113,11 +113,11 @@
         <span><a href="">Bizu Variedades</a></span>
         <nav>
           <ul class="d-flex list-unstyled">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="store.html">Loja</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="index.html#featured-products">Destaques de Produtos</a></li>
-            <li><a href="contact.html">Contato</a></li>
+            <li><a href="{% url 'products:home' %}">Início</a></li>
+            <li><a href="{% url 'products:products' %}">Loja</a></li>
+            <li><a href="{% url 'page:about' %}">Sobre</a></li>
+            <li><a href="#featured-products">Destaques de Produtos</a></li>
+            <li><a href="{% url 'page:contact' %}">Contato</a></li>
             <li><a href="blog.html">Blog</a></li>
           </ul>
         </nav>
@@ -127,80 +127,13 @@
           <a href=""><i class="bi bi-bag"></i></a>
         </div>
       </div>
-    
-    
     </header>
 
-    <main>
-      <div class="top-banner">
-          <h2>SOBRE</h2>
-      </div>
-      <div class="about-body container justify-content-center">
-        <div class="row align-items-center">
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <img src="imgs/banner-02.jpg" alt="" class="img-fluid d-block m-auto">
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-8">
-            <h1>Nossa História</h1>
-            <p>CConsectetur quo nam consectetur voluptates odit. Nisi nam tempore suscipit ea dolore Cumque et repellat voluptatum velit nihil Dolor aut possimus consequuntur in veniam. Eaque minima repellendus rerum commodi vitae.Lorem molestias tempore corporis et velit Earum quidem maiores voluptatum beatae pariatur! Voluptatum rem consequuntur animi harum minima! Corrupti dolorum eaque sint iusto suscipit Quia sunt molestias magni esse accusantium.onsectetur quo nam consectetur voluptates odit. Nisi nam tempore suscipit ea dolore Cumque et repellat voluptatum velit nihil Dolor aut possimus consequuntur in veniam. Eaque minima repellendus rerum commodi vitae.Lorem molestias tempore corporis et velit Earum quidem maiores voluptatum beatae pariatur! Voluptatum rem consequuntur animi harum minima! Corrupti dolorum eaque sint iusto suscipit Quia sunt molestias magni esse accusantium.</p>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-lg-3">
-            <h5>Entrar em Contato</h5>
-            <p>Alguma dúvida? Fale conosco pelas formas de contato disponíveis abaixo. Em menos de 24 horas lhe retornaremos.</p>
-            <ul class="social-midia list-unstyled d-flex">
-              <li><a href=""><i class="bi bi-instagram"></i></a></li>
-              <li><a href=""><i class="bi bi-facebook"></i></a></li>
-              <li><a href=""><i class="bi bi-envelope"></i></a></li>
-              <li><a href=""><i class="bi bi-whatsapp"></i></a></li>
-              <li><a href=""><i class="bi bi-telegram"></i></a></li>
-            </ul>
-          </div>
-
-          <div class="col-sm-12 col-lg-3">
-            <h5>CATEGORIES</h5>
-            <ul class="links-list list-unstyled">
-              <li><a href="">Vestidos</a></li>
-              <li><a href="">Relógios</a></li>
-              <li><a href="">Mochilas</a></li>
-              <li><a href="">Ténis</a></li>
-              <li><a href="">Camisetas</a></li>
-            </ul>
-          </div>
-
-          <div class="col-sm-12 col-lg-3">
-            <h5>LINKS</h5>
-            <ul class="links-list list-unstyled">
-              <li><a href="index.html">Início</a></li>
-              <li><a href="store.html">Loja</a></li>
-              <li><a href="#">Sobre</a></li>
-              <li><a href="index.html#featured-products">Destaques de Produtos</a></li>
-              <li><a href="blog.html">Blog</a></li>
-            </ul>
-          </div>
-
-          <div class="col-sm-12 col-lg-3">
-            <h5>AJUDA</h5>
-            <ul class="links-list list-unstyled">
-              <li><a href="">Acompanhar Pedido</a></li>
-              <li><a href="">Suporte</a></li>
-              <li><a href="">FaQs</a></li>
-            </ul>
-          </div>
-        </div>
-        <hr>
-        <p>@copyright Bizu Variedades</p>
-      </div>
-    </footer>
+    {% block content %}
+    {% endblock content %}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
   </body>
 </html>
 

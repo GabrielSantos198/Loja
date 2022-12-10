@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Produtos{% endblock %}
+
+{% block content %}
+<main>
+  <div class="top-banner">
+    <h2>Loja</h2>
+  </div>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-4 col-md-3">
+        <ul class="list-group mb-3 mb-lg-0">
+          <a class="text-decoration-none list-group-item list-group-item-light" href="">
+            Todos os produtos
+          </a>
+
+          <a class="text-decoration-none list-group-item list-group-item-light" href="">
+            Camisa
+          </a>
+        </ul>
+      </div>
+
+      <div class="col-8 col-md-9">
+        <div class="row">
+          {% for merchandise in products %}
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <a href="{% url 'products:product_detail' merchandise.slug %}">
+                <img class="card-img-top" src="{{ merchandise.image.url }}" alt="">
+              </a>
+
+              <div class="card-body d-flex flex-column justify-content-between">
+                <a class="text-decoration-none text-dark" href="{% url 'products:product_detail' merchandise.slug %}">
+                  <h5 class="card-title">{{ merchandise.name }}</h5>
+                </a>
+                <a class="text-decoration-none text-dark" href="{% url 'products:product_detail' merchandise.slug %}">
+                  <p class="card-text font-weight-bold">{{ merchandise.price }}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% include 'footer.html' %}
+{% endblock content %}
+
+

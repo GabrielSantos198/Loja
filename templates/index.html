@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+  <!-- Slide Carousel -->
+  <div class="container-fluid">
+    <div id="mainSlide" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-bs-target="#mainSlide" data-bs-slide-to="0" class="active" role="button"></li>
+        <li data-bs-target="#mainSlide" data-bs-slide-to="1" role="button"></li>
+        <li data-bs-target="#mainSlide" data-bs-slide-to="2" role="button"></li>
+      </ol>
+
+      <!-- Carousel body -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-caption">
+            <h5>{{ HomePageSlideShow.slide_0_title }}</h5>
+            <p>{{ HomePageSlideShow.slide_0_text }}</p>
+            <a href="{% url 'products:products' %}">COMPRAR AGORA</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption">
+            <h5>{{ HomePageSlideShow.slide_1_title }}</h5>
+            <p>{{ HomePageSlideShow.slide_1_text }}</p>
+            <a href="{% url 'products:products' %}">COMPRAR AGORA</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption">
+            <h5>{{ HomePageSlideShow.slide_2_title }}</h5>
+            <p>{{ HomePageSlideShow.slide_2_text }}</p>
+            <a href="{% url 'products:products' %}">COMPRAR AGORA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="carousel-control-prev" href="#mainSlide" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#mainSlide" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Categories -->
+    <section class="categories">
+      <div class="category"><img src="{% static 'imgs/banner-02.jpg' %}" alt=""><a class="btn btn-light" href="">Vestidos</a></div>
+      <div class="category"><img src="{% static 'imgs/banner-07.jpg' %}" alt=""><a class="btn btn-light" href="">Relógios</a></div>
+      <div class="category"><img src="{% static 'imgs/banner-04.jpg' %}" alt=""><a class="btn btn-light" href="">Mochilas</a></div>
+      <div class="category"><img src="{% static 'imgs/banner-05.jpg' %}" alt=""><a class="btn btn-light" href="">Óculos</a></div>
+      <div class="category"><img src="{% static 'imgs/banner-07.jpg' %}" alt=""><a class="btn btn-light" href="">Ténis</a></div>
+      <div class="category"><img src="{% static 'imgs/camisas.png' %}" alt=""><a class="btn btn-light" href="">Camisas</a></div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured-products" class="featured-products">
+      <h5>DESTAQUES DE PRODUTOS</h5>
+      <div class="featured-products-slide">
+        {% for product in featured %}
+        <div class="featured-slide-item"><img src="{{ product.image.url }}" alt=""><p class="instagram-post-text">{{ product.name }} R$ {{ product.price }}</p><a class="btn btn-success" href="{% url 'products:product_detail' product.slug %}">VISITAR</a></div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <!-- Instagram -->
+  <section class="instagram">
+    <h5>@ SIGANOS NO INSTAGRAM</h5>
+    <a href="#">
+      <div>
+        <div class="instagram-post"><img src="{{ InstagramSection.instagram_0_image.url }}" alt=""><p>{{ InstagramSection.instagram_0_text }}</p></div>
+        <div class="instagram-post"><img src="{{ InstagramSection.instagram_1_image.url }}" alt=""><p>{{ InstagramSection.instagram_1_text }}</p></div>
+        <div class="instagram-post"><img src="{{ InstagramSection.instagram_2_image.url }}" alt=""><p>{{ InstagramSection.instagram_2_text }}</p></div>
+        <div class="instagram-post"><img src="{{ InstagramSection.instagram_3_image.url }}" alt=""><p>{{ InstagramSection.instagram_3_text }}</p></div>
+        <div class="instagram-post"><img src="{{ InstagramSection.instagram_4_image.url }}" alt=""><p>{{ InstagramSection.instagram_4_text }}</p></div>
+      </div>
+    </a>
+  </section>
+</main>
+
+{% include 'footer.html' %}
+{% endblock content %}
+

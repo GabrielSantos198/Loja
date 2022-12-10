@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contato{% endblock title %}
+
+{% block content %}
+<main>
+  <div class="top-banner">
+      <h2>CONTATO</h2>
+  </div>
+  <div class="contact-body container d-flex justify-content-center">
+    <div class="row align-items-center">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <iframe class="d-block m-auto" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.9303532461595!2d-35.88749972406382!3d-7.248767392757745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ac1e77ac052899%3A0x634fb821becf5ed8!2sR.%20S%C3%A3o%20Judas%20Tadeu%20-%20Catol%C3%A9%2C%20Campina%20Grande%20-%20PB%2C%2058410-547!5e0!3m2!1spt-BR!2sbr!4v1669844555745!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-8">
+        <h1>Envie sua mensagem</h1>
+        <form action="">
+          <div class="row g-3">
+            <div class="col-sm-12 col-lg-6">
+              <input type="text" placeholder="Nome" required="required" class="form-control">
+            </div>
+            <div class="col-sm-12 col-lg-6">
+              <input type="email" placeholder="E-mail" required="required" class="form-control">
+            </div>
+            <div class="col-sm-12">
+              <input type="text" placeholder="Assunto" required="required" class="form-control">
+            </div>
+            <div class="col-sm-12">
+              <textarea placeholder="Sua mensagem" name="" cols="30" rows="10" required="required" class="form-control"></textarea>
+            </div>
+            <input type="submit" value="Enviar" class="btn btn-success">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% include 'footer.html' %}
+{% endblock content %}

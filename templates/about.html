@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sobre{% endblock title %}
+
+{% block content %}
+<main>
+  <div class="top-banner">
+      <h2>SOBRE</h2>
+  </div>
+  <div class="about-body container justify-content-center">
+    <div class="row align-items-center">
+      {% for field in about %}
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <img src="{{ field.image.url }}" alt="" class="img-fluid d-block m-auto">
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-8">
+        <h1>Nossa História</h1>
+        <p>{{ field.about }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+{% include 'footer.html' %}
+{% endblock content %}
