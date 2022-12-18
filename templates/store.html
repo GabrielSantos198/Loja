@@ -13,13 +13,13 @@
     <div class="row">
       <div class="col-4 col-md-3">
         <ul class="list-group mb-3 mb-lg-0">
-          <a class="text-decoration-none list-group-item list-group-item-light" href="">
+          <a class="text-decoration-none list-group-item list-group-item-light" href="{% url 'products:products' %}">
             Todos os produtos
           </a>
 
-          <a class="text-decoration-none list-group-item list-group-item-light" href="">
-            Camisa
-          </a>
+          {% for category in categories %}
+          <a class="text-decoration-none list-group-item list-group-item-light" href="{% url 'products:filter_products' category.slug %}">{{ category.name }}</a>
+          {% endfor %}
         </ul>
       </div>
 
@@ -43,6 +43,10 @@
             </div>
           </div>
           {% endfor %}
+
+          {% if is_paginated %}
+            {% include 'pagination.html' with page=page_obj %}
+          {% endif %}
         </div>
       </div>
     </div>

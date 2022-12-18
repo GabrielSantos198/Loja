@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-21kx$-g_i1r70b(z=qg((_4gvxx0aq(cjs(63lg8st-#sd1qf5'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -38,11 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # Thirdy Apps
+    'cart',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     # My Apps
     'users',
     'products',
     'page',
+    'shopping_cart',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processor.cart_total_amount',
             ],
         },
     },
@@ -109,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt'
 
 TIME_ZONE = 'UTC'
 
@@ -136,3 +144,29 @@ AUTH_USER_MODEL = 'users.User'
 # Media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CART_SESSION_ID = 'cart'
+
+# Send Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+RECIPIENT_ADDRESS = config('RECIPIENT_ADDRESS')
+
+# Login
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True

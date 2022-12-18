@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cart_tag %}
+
+{% block title %}Meu Carrinho{% endblock %}
+
+{% block content %}
+<main>
+  {% if request.session.cart.items %}
+  <div class="cart-card">
+    <div class="row">
+      <div class="col-md-8 cart">
+        <div class="cart-title">
+          <div class="row">
+            <div class="col"><h4><b>Carrinho de compras</b></h4></div>
+            <div class="col align-self-center text-right">{{ request.session.cart|length }} items</div>
+          </div>
+        </div>    
+
+				{% for key, value in request.session.cart.items %}
+					<div class="row border-bottom">
+						<div class="row cart-main align-items-center">
+              <a href="{% url 'products:product_detail' value.name %}" class="col-2"><img class="img-fluid" src="{{ value.image }}"></a>
+							<div class="col">
+								<a href="{% url 'products:product_detail' value.name %}" class="row">{{ value.name }}</a>
+							</div>
+							<div class="col">
+                <a href="{% url 'cart:item_decrement' value.product_id %}">-</a><a href="" class="border">{{ value.quantity }}</a><a href="{% url 'cart:item_increment' value.product_id %}">+</a>
+							</div>
+              <div class="col"><a href="">R$ {{ value.price }}</a> <a href="{% url 'cart:item_clear' value.product_id %}">&#10005;</a></div>
+						</div>
+					</div>
+				{% endfor %}
+
+        <div class="back-to-shop"><a href="{% url 'products:products' %}">&leftarrow;<span>Voltar a loja</span></a></div>
+      </div>
+      <div class="col-md-4 cart-summary">
+        <div><h5><b>Detalhes de Cartão</b></h5></div>
+        <hr>
+
+        <form>
+          <div class="row">
+            <div class="col-12"><input class="form-control" type="text" placeholder="Nome do Titular"></div>
+            <div class="col-12"><input class="form-control" type="number" placeholder="Número do Cartão"></div>
+            <div class="col-6"><input class="form-control" type="text" placeholder="Expiração"></div>
+            <div class="col-6"><input class="form-control" type="number" placeholder="CVV"></div>
+          </div>
+        </form>
+
+        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+          <div class="col">TOTAL </div>
+            {{ cart_total_amount }}0
+          <div class="col text-right"></div>
+        </div>
+        <button class="btn">COMPRAR</button>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="container">
+    <div class="cart-empty">
+      <h4>Carrinho Vazio</h4>
+      <img src="{% static 'imgs/cart.png' %}" alt="">
+    </div>
+  </div>
+  {% endif %}
+</main>
+
+{% include 'footer.html' %}
+{% endblock content %}

@@ -11,6 +11,10 @@ a{
   color: #000;
 }
 
+main{
+  min-height: 70vh;
+}
+
 a:hover{
   color: #000;
 }
@@ -46,6 +50,10 @@ a:hover{
 
 .topbar .topbar-icons a{
   color: gray;
+}
+
+.badge{
+  font-size: 12px;
 }
 
 /* Hamburger */
@@ -376,7 +384,7 @@ footer .links-list li a:hover{
 
 
 /* ----------------------- */
-      /* About */
+/* About */
 /* ----------------------- */
 .top-banner{
   width: 100%;
@@ -399,7 +407,7 @@ footer .links-list li a:hover{
   margin-top: 50px;
 }
 
-.about-body div h1, .contact-body div h1{
+.about-body div h4, .contact-body div h4{
   font-family: 'Roboto Condensed', sans-serif;
   margin-top: 30px;
 }
@@ -413,12 +421,11 @@ footer .links-list li a:hover{
 }
 
 .contact-body iframe{
-  height: 400px;
-}
+  height: 400px; }
 
 
 /* ----------------------- */
-      /* Config */
+/* Config */
 /* ----------------------- */
 .procfile-config-image img{
   width: 200px;
@@ -438,7 +445,272 @@ footer .links-list li a:hover{
 
 
 /* ----------------------- */
-      /* Dark  */
+/* Login
+/* ----------------------- */
+#login{
+  margin-top: 10vh;
+  max-width: 700px;
+}
+
+#login form{
+  text-align: center;
+}
+
+#login form ul li{
+  padding: 7px 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+#login form ul li:nth-child(1){
+  background-color: #3B5998;
+  color: #fff;
+}
+
+#login form ul li:nth-child(2){
+  border: 2px solid #ddd;
+}
+
+.btn-black{
+  background-color: #000;
+  color: #fff;
+}
+
+#login form ul{
+  display: flex;
+  justify-content: center;
+}
+
+#login form input{
+  margin: 15px 0;
+}
+
+#login p a{
+  color: #3B5998;
+}
+
+
+/* ----------------------- */
+/* Cart
+/* ----------------------- */
+.cart-title{
+    margin-bottom: 5vh;
+    margin-top: 50px;
+}
+
+.cart-card{
+    margin: 50px auto auto auto;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+}
+
+@media(max-width:767px){
+    .cart-card{
+        margin: 3vh auto;
+    }
+}
+
+.cart-main{
+    background-color: #fff;
+    padding: 4vh 3vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+@media(max-width:767px){
+    .cart-main{
+        padding: 3vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem;
+    }
+}
+.cart-summary{
+    background-color: #ddd;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65);
+}
+
+@media(max-width:767px){
+    .cart-summary{
+    border-top-right-radius: unset;
+    border-bottom-left-radius: 1rem;
+    }
+}
+
+.cart-summary .col-2{
+    padding: 0;
+}
+
+.cart-summary .col-10{
+    padding: 0;
+}
+
+.cart-card .row{
+    margin: 0;
+}
+
+.cart-title b{
+    font-size: 1.5rem;
+}
+
+.cart-main{
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%;
+}
+
+.cart-card .col-2, .cart-card .col{
+    padding: 0 1vh;
+}
+
+.cart-card a{
+    padding: 0.6vh;
+}
+
+.close{
+    margin-left: auto;
+    font-size: 0.7rem;
+}
+
+.cart-main img{
+    width: 3.5rem;
+}
+
+.back-to-shop{
+    margin-top: 4.5rem;
+    margin-bottom: 50px;
+}
+
+.cart-card h5{
+    margin-top: 4vh;
+}
+
+.cart-card hr{
+    margin-top: 1.25rem;
+}
+
+.cart-summary form{
+    padding: 2vh 0;
+}
+
+.cart-summary input{
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+
+.cart-summary input:focus::-webkit-input-placeholder{
+      color:transparent;
+}
+
+.cart-summary .btn{
+    background-color: #000;
+    border-color: #000;
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin-top: 4vh;
+    padding: 1vh;
+    border-radius: 0;
+}
+.cart-summary .btn:focus{
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+    -webkit-user-select: none;
+    transition: none; 
+}
+.cart-summary .btn:hover{
+    color: white;
+}
+
+.cart-summary a{
+    color: black; 
+}
+
+.cart-summary a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+#code{
+	background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253) , rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+	background-repeat: no-repeat;
+	background-position-x: 95%;
+	background-position-y: center;
+}
+
+.cart-empty{
+  margin-top: 50px;
+  text-align: center;
+}
+
+.cart-empty img{
+  width: 350px;
+}
+
+
+/* ----------------------- */
+/* Success
+/* ----------------------- */
+
+.success-page{
+ text-align: center;
+ padding: 40px 0;
+}
+
+.success-page div{
+  width: 95%;
+  max-width: 400px;
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px #C8D0D8;
+  display: inline-block;
+  margin: 50px auto;
+}
+
+
+.success-page div i{
+  color: #9ABC66;
+  font-size: 100px;
+  line-height: 100px;
+  margin-left:-15px;
+}
+
+.success-page div a{
+  font-size:20px;
+  color: #19a3f7;
+}
+
+.success-page div p{
+  color: #404F5E;
+  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+  font-size:20px;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.success-page div h1{
+  color: #88B04B;
+  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  margin: 15px 0 10px 0;
+}
+
+
+
+/* ----------------------- */
+/* Dark  */
 /* ----------------------- */
 .dark{
   background-color: #121212;
@@ -469,9 +741,39 @@ footer .links-list li a:hover{
   background: #fff;
 }
 
+.dark .cart-card .cart{
+  background-color: #343A40;
+}
+
+.dark .cart-card .cart-main a{
+  color: #000;
+}
+
+.dark .cart-main{
+  background-color: #ddd;
+}
+
+.dark .back-to-shop a{
+  color: #fff;
+}
+
+.dark .btn-black{
+  background-color: green;
+  border: none;
+}
+
+.dark .success-page div{
+  background-color: #343A40;
+}
+
+.dark .success-page div p{
+  color: #fff;
+}
+
+
 
 /* ----------------------- */
-      /* Responsive */
+/* Responsive */
 /* ----------------------- */
 @media (min-width: 520px){
   .instagram .instagram-post{
@@ -502,6 +804,15 @@ footer .links-list li a:hover{
 
   .config-form{
     width: 50%;
+  }
+
+  .desktop-header .badge{
+    font-size: 12px;
+    color: #fff;
+  }
+
+  #login-container{
+    width: 768px;
   }
 
 }
@@ -543,8 +854,8 @@ footer .links-list li a:hover{
     color: gray;
   }
 
- .topbar-icons a:hover{
-   color: #E65540;
+  .topbar-icons a:hover{
+    color: #E65540;
   }
 
   .desktop-header{
@@ -572,7 +883,7 @@ footer .links-list li a:hover{
   }
 
   .desktop-header div a:hover{
-   color: #E65540;
+    color: #E65540;
   }
 
   .desktop-header nav ul li{
@@ -582,7 +893,7 @@ footer .links-list li a:hover{
   }
 
   .desktop-header nav ul li a:hover{
-   color: #E65540;
+    color: #E65540;
   }
   /* END */
 

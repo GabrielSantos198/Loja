@@ -55,4 +55,3 @@ if(localStorage.theme){
     DefaultTheme()
   }
 }
-

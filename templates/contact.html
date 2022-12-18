@@ -15,19 +15,20 @@
       </div>
       <div class="col-sm-12 col-md-6 col-lg-8">
         <h1>Envie sua mensagem</h1>
-        <form action="">
+        <form action="{% url 'page:contact' %}" method="POST">
+          {% csrf_token %}
           <div class="row g-3">
             <div class="col-sm-12 col-lg-6">
-              <input type="text" placeholder="Nome" required="required" class="form-control">
+              <input type="text" placeholder="Nome" required="required" class="form-control" name="name" >
             </div>
             <div class="col-sm-12 col-lg-6">
-              <input type="email" placeholder="E-mail" required="required" class="form-control">
+              <input type="email" placeholder="E-mail" required="required" class="form-control" name="email" >
             </div>
             <div class="col-sm-12">
-              <input type="text" placeholder="Assunto" required="required" class="form-control">
+              <input type="text" placeholder="Assunto" required="required" class="form-control" name="subject" >
             </div>
             <div class="col-sm-12">
-              <textarea placeholder="Sua mensagem" name="" cols="30" rows="10" required="required" class="form-control"></textarea>
+              <textarea placeholder="Sua mensagem" cols="30" rows="10" required="required" class="form-control" name="message" ></textarea>
             </div>
             <input type="submit" value="Enviar" class="btn btn-success">
           </div>

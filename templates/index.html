@@ -14,6 +14,7 @@
       </ol>
 
       <!-- Carousel body -->
+      {% if HomePageSlideShow %}
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="carousel-caption">
@@ -37,6 +38,31 @@
           </div>
         </div>
       </div>
+      {% else %}
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-caption">
+            <h5>Titulo</h5>
+            <p>Adicionar um pequeno texto.</p>
+            <a href="{% url 'products:products' %}">COMPRAR AGORA</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption">
+            <h5>Titulo</h5>
+            <p>Adicionar um pequeno texto.</p>
+            <a href="{% url 'products:products' %}">COMPRAR AGORA</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption">
+            <h5>Titulo</h5>
+            <p>Adicionar um pequeno texto.</p>
+            <a href="{% url 'products:products' %}">COMPRAR AGORA</a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
 
       <!-- Controls -->
       <a class="carousel-control-prev" href="#mainSlide" role="button" data-bs-slide="prev">
@@ -75,11 +101,19 @@
     <h5>@ SIGANOS NO INSTAGRAM</h5>
     <a href="#">
       <div>
+        {% if InstagramSection %}
         <div class="instagram-post"><img src="{{ InstagramSection.instagram_0_image.url }}" alt=""><p>{{ InstagramSection.instagram_0_text }}</p></div>
         <div class="instagram-post"><img src="{{ InstagramSection.instagram_1_image.url }}" alt=""><p>{{ InstagramSection.instagram_1_text }}</p></div>
         <div class="instagram-post"><img src="{{ InstagramSection.instagram_2_image.url }}" alt=""><p>{{ InstagramSection.instagram_2_text }}</p></div>
         <div class="instagram-post"><img src="{{ InstagramSection.instagram_3_image.url }}" alt=""><p>{{ InstagramSection.instagram_3_text }}</p></div>
         <div class="instagram-post"><img src="{{ InstagramSection.instagram_4_image.url }}" alt=""><p>{{ InstagramSection.instagram_4_text }}</p></div>
+        {% else %}
+        <div class="instagram-post"><img src="{% static 'imgs/fundo.jpg' %}" alt=""><p>Lorem sapiente voluptatibus voluptate mollitia nesciunt magni. Consequuntur nesciunt quas tempore voluptas corrupti! Facere perferendis ea beatae atque odit. Magnam sequi omnis at nobis fugiat Dolorem quae obcaecati dolor aut.</p></div>
+        <div class="instagram-post"><img src="{% static 'imgs/fundo.jpg' %}" alt=""><p>Elit nam nesciunt quaerat et voluptatum eaque. Debitis voluptatibus quam quod ipsam ex. Sequi vero quos omnis obcaecati consequatur, cum sed. Aliquid cupiditate consequuntur consequuntur magnam itaque esse error, consequuntur.</p></div>
+        <div class="instagram-post"><img src="{% static 'imgs/fundo.jpg' %}" alt=""><p>Amet animi impedit repudiandae dolorum fugit Animi at illo voluptatibus ipsam accusamus. Maiores ea consequatur provident praesentium veritatis Quasi perferendis facilis culpa vitae deserunt voluptatum porro. Optio at sapiente accusamus</p></div>
+        <div class="instagram-post"><img src="{% static 'imgs/fundo.jpg' %}" alt=""><p>Dolor nulla quod quaerat ipsa facilis doloremque A cupiditate cum cum minus doloribus Quia culpa quia optio assumenda adipisci Incidunt libero consequatur voluptas autem laborum debitis. Necessitatibus mollitia aliquam quis</p></div>
+        <div class="instagram-post"><img src="{% static 'imgs/fundo.jpg' %}" alt=""><p>Lorem voluptates iste facere natus molestiae? Est repellendus iste saepe sequi quo accusamus necessitatibus Dicta libero esse saepe nesciunt ea? Vitae est doloribus id officiis dolorum. Totam laboriosam adipisci quas?</p></div>
+        {% endif %}
       </div>
     </a>
   </section>

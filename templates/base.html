@@ -1,4 +1,5 @@
 {% load static %}
+{% load cart_tag %}
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -28,7 +29,7 @@
 
         <div class="topbar-icons">
           <a href=""><i class="bi bi-person-circle"></i></a>
-          <a href=""><i class="bi bi-bag"></i></a>
+          <a href="{% url 'cart:cart_detail' %}"><i class="bi bi-bag"></i><span class="badge bg-secondary">{{ request.session.cart|length }}</span></a>
 
           <input id="chk" type="checkbox">
           <label for="chk">
@@ -42,7 +43,9 @@
       <!-- Dropdown -->
       <section class="dropdown">
         <div class="dropdown-top">
-          <input placeholder="  Buscar" class="search" type="search">
+          <form action="{% url 'products:search_results' %}" method="get">
+              <input required="required" name="q" placeholder="  Buscar" class="search" type="search">
+          </form>
 
           <div class="translateAndtheme">
             <select id="" name="">
@@ -75,7 +78,7 @@
             <li><a href="{% url 'page:about' %}">Sobre</a></li>
             <li><a href="{% url 'products:home' %}#featured-products">Destaques de Produtos</a></li>
             <li><a href="{% url 'page:contact' %}">Contato</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="{% url 'products:home' %}">Blog</a></li>
           </ul>
         </nav>
       </section>
@@ -91,7 +94,10 @@
           <a href=""><i class="bi bi-whatsapp"></i></a>
           <a href=""><i class="bi bi-telegram"></i></a>
         </div>
-        <input placeholder="  Buscar" class="search" type="search">
+        
+        <form action="{% url 'products:search_results' %}" method="get">
+            <input required="required" name="q" placeholder="  Buscar" class="search" type="search">
+        </form>
 
         <div class="translateAndtheme">
           <div class="theme">
@@ -110,21 +116,21 @@
       </div>
 
       <div class="desktop-header">
-        <span><a href="">Bizu Variedades</a></span>
+        <span><a href="/">Bizu Variedades</a></span>
         <nav>
           <ul class="d-flex list-unstyled">
             <li><a href="{% url 'products:home' %}">Início</a></li>
             <li><a href="{% url 'products:products' %}">Loja</a></li>
             <li><a href="{% url 'page:about' %}">Sobre</a></li>
-            <li><a href="#featured-products">Destaques de Produtos</a></li>
+            <li><a href="{% url 'products:home' %}#featured-products">Destaques de Produtos</a></li>
             <li><a href="{% url 'page:contact' %}">Contato</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="{% url 'products:home' %}">Blog</a></li>
           </ul>
         </nav>
 
         <div>
           <a href=""><i class="bi bi-person-circle"></i></a>
-          <a href=""><i class="bi bi-bag"></i></a>
+          <a href="{% url 'cart:cart_detail' %}"><i class="bi bi-bag"></i><span class="badge bg-secondary">{{ request.session.cart|length }}</span></a>
         </div>
       </div>
     </header>
