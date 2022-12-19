@@ -28,7 +28,7 @@
         <span><a href="/">Bizu Variedades</a></span>
 
         <div class="topbar-icons">
-          <a href=""><i class="bi bi-person-circle"></i></a>
+          <a href="{% url 'account_signup' %}"><i class="bi bi-person-circle"></i></a>
           <a href="{% url 'cart:cart_detail' %}"><i class="bi bi-bag"></i><span class="badge bg-secondary">{{ request.session.cart|length }}</span></a>
 
           <input id="chk" type="checkbox">

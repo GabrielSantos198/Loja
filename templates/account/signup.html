@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Cadastrar{% endblock %}
+
+{% block content %}
+
+<main>
+  <div id="login" class="container">
+    <form method="POST">
+      {% csrf_token %}
+      {{form}} 
+      <input type="submit" value="Enviar" class="btn btn-dark">
+    </form>
+  </div>
+</main>
+
+{% include 'footer.html' %}
+{% endblock content %}
+
