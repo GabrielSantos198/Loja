@@ -21,7 +21,10 @@ class ContactPageView(TemplateView):
             subject=request.POST['subject'],
             message=organize,
             from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[settings.RECIPIENT_ADDRESS]
-        )
+            recipient_list=[settings.RECIPIENT_ADDRESS])
         return render(request, 'success.html')
+
+
+class ConfigPageView(TemplateView):
+    template_name = 'config.html'
 

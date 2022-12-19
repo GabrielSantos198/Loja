@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Sair{% endblock %}
+
+{% block content %}
+
+<main>
+  <div class="exit-sys">
+    <h2>Tem certeza que deseja Sair?</h2>
+    <div>
+      <form method='POST'>
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Sair">
+      </form>
+      <a href="{% url 'page:config' %}">Cancelar</a>
+    </div>
+  </div>
+</main>
+
+{% endblock%}

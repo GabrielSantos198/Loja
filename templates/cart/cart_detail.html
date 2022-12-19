@@ -22,7 +22,7 @@
 						<div class="row cart-main align-items-center">
               <a href="" class="col-2"><img class="img-fluid" src="{{ value.image }}"></a>
 							<div class="col">
-								<a href="" class="row">{{ value.name }}</a>
+								<a href="" class="row">{{ value.name|truncatechars:20 }}</a>
 							</div>
 							<div class="col">
                 <a href="{% url 'cart:item_decrement' value.product_id %}">-</a><a href="" class="border">{{ value.quantity }}</a><a href="{% url 'cart:item_increment' value.product_id %}">+</a>

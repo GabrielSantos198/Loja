@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Cadastrar{% endblock %}
+{% block title %}Entrar{% endblock %}
 
 {% block content %}
 
@@ -9,17 +9,18 @@
   <div id="login" class="container">
     <form method="POST">
       {% csrf_token %}
-      <h3>Cadastrar com</h3>
+      <h3>Entrar com</h3>
       <ul>
         <li><a><i class="bi bi-facebook"> Facebook</i></a></li>
         <li><a><i class="bi bi-google"> Google</i></a></li>
       </ul>
       {{form}}
       <input type="submit" value="Enviar" class="form-control btn btn-dark">
-      <p>Já tem uma conta?<a href="{% url 'account_login' %}"> Entrar</a><p>
+      <p>Não tem uma conta?<a href="{% url 'account_signup' %}"> Cadastrar</a><p>
     </form>
   </div>
 </main>
 
 {% include 'footer.html' %}
 {% endblock content %}
+
