@@ -5,51 +5,56 @@
 
 {% block content %}
     <div class="container d-flex mt-5  mb-5 justify-content-center">
-      <form class="config-form" action="">
+      <form enctype="multipart/form-data" class="config-form" method="POST">
+        {% csrf_token %}
         <div class="row g-3">
           <div class="col-12 procfile-config-image mb-4">
-            <img class="mb-4" src="{% static 'imgs/fundo.jpg' %}" alt="">
-            <input type="file">
+            {% if user.procfile_photo %}
+            <img src="{{user.procfile_photo.url}}" alt="">
+            {% else %}
+            <img src="{% static 'imgs/fundo.jpg' %}" alt="">
+            {% endif %}
+            {{form.procfile_photo}}
           </div>
           <div class="col-12">
             <label for="cpf" class="form-label">CPF*</label>
-            <input type="name" id="cpf" required="required" class="form-control">
+            {{form.cpf}}
           </div>
           <div class="col-12">
             <label for="name" class="form-label">Nome Completo*</label>
-            <input type="name" id="name" required="required" class="form-control">
+            {{form.username}}
           </div>
           <div class="col-12">
             <label for="email" class="form-label">Email*</label>
-            <input type="email" id="email" required="required" class="form-control">
+            {{form.email}}
           </div>
           <div class="col-4">
             <label for="cep" class="form-label">CEP*</label>
-            <input type="name" id="cep" required="required" class="form-control">
+            {{form.cep}}
           </div>
           <div class="col-4">
             <label for="state" class="form-label">Estado*</label>
-            <input type="name" id="state" required="required" class="form-control">
+            {{form.state}}
           </div>
           <div class="col-4">
             <label for="city" class="form-label">Cidade*</label>
-            <input type="name" id="city" required="required" class="form-control">
+            {{form.city}}
           </div>
           <div class="col-6">
             <label for="address" class="form-label">Endereço*</label>
-            <input type="name" id="address" required="required" class="form-control">
+            {{form.address}}
           </div>
           <div class="col-6">
             <label for="district" class="form-label">Bairro*</label>
-            <input type="name" id="district" required="required" class="form-control">
+            {{form.district}}
           </div>
           <div class="col-6">
             <label for="number" class="form-label">Número*</label>
-            <input type="name" id="number" required="required" class="form-control">
+            {{form.number}}
           </div>
           <div class="col-6">
             <label for="complement" class="form-label">Complemento</label>
-            <input type="name" id="complement" required="required" class="form-control">
+            {{form.complement}}
           </div>
           <div class="col-12">
             <input type="submit" value="Enviar" class="btn btn-success form-control">
@@ -61,7 +66,7 @@
             <a href="{% url 'account_logout' %}" class="btn btn-danger form-control">Sair</a>
           </div>
           <div class="col-sm-12">
-            <a href="" class="btn btn-danger form-control">Deletar Conta</a>
+            <a href="{% url 'page:account_delete' user.id %}" class="btn btn-danger form-control">Deletar Conta</a>
           </div>
         </div>
         <div class="m-4 back"><a href="{% url 'products:home' %}">Voltar</a></div>

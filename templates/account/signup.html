@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 
 {% block title %}Cadastrar{% endblock %}
 
@@ -11,8 +13,8 @@
       {% csrf_token %}
       <h3>Cadastrar com</h3>
       <ul>
-        <li><a><i class="bi bi-facebook"> Facebook</i></a></li>
-        <li><a><i class="bi bi-google"> Google</i></a></li>
+        <li><a href="{% provider_login_url 'facebook' method='oauth2' %}"><i class="bi bi-facebook"> Facebook</i></a></li>
+        <li><a href="{% provider_login_url 'google' method='js_sdk' %}"><i class="bi bi-google"> Google</i></a></li>
       </ul>
       {{form}}
       <input type="submit" value="Enviar" class="form-control btn btn-dark">

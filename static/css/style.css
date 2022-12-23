@@ -445,6 +445,13 @@ footer .links-list li a:hover{
   text-align: center;
 }
 
+.config-form input, .config-form select{
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #D3D3D3;
+  border-radius: 5px;
+}
+
 
 /* ----------------------- */
 /* Login

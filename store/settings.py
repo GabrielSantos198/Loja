@@ -47,8 +47,11 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
     'cloudinary',
     'cloudinary_storage',
+    'localflavor',
     # My Apps
     'users',
     'products',
@@ -167,7 +170,7 @@ RECIPIENT_ADDRESS = config('RECIPIENT_ADDRESS')
 
 # Login
 SITE_ID = 1
-LOGIN_REDIRECT_URL = 'page:config'
+LOGIN_REDIRECT_URL = '/'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

@@ -1,12 +1,13 @@
 from django.urls import path
-from . views import AboutPageView, ContactPageView, ConfigPageView
+from . views import AboutPageView, ContactPageView, ConfigPageView, AccountDelete
 
 app_name = 'page'
 
 urlpatterns = [
     path('sobre/', AboutPageView.as_view(), name='about'),
     path('contato/', ContactPageView.as_view(), name='contact'),
-    path('configuracao/', ConfigPageView.as_view(), name='config'),
+    path('configuracao/<int:pk>/', ConfigPageView.as_view(), name='config'),
+    path('deletar_conta/<int:pk>/', AccountDelete.as_view(), name='account_delete'),
 ]
 
 

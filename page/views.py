@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render 
 from django.views.generic import TemplateView, ListView
+from django.views.generic.edit import UpdateView, DeleteView
 from . models import AboutPage
 from django.core.mail import send_mail
 from django.conf import settings
-
+from users.models import User
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 class AboutPageView(ListView):
@@ -25,6 +28,21 @@ class ContactPageView(TemplateView):
         return render(request, 'success.html')
 
 
-class ConfigPageView(TemplateView):
+@method_decorator(login_required, name='dispatch')
+class ConfigPageView(UpdateView):
     template_name = 'config.html'
+    fields = ('procfile_photo', 'cpf', 'username', 'email', 'cep', 'state', 'city', 'address', 'district', 'number', 'complement',)
+    success_url = '/'
+
+    def get_queryset(self):
+        return User.objects.filter(id=self.request.user.id)
+
+
+@method_decorator(login_required, name='dispatch')
+class AccountDelete(DeleteView):
+    template_name = 'delete.html'
+    success_url = '/'
+
+    def get_queryset(self):
+        return User.objects.filter(id=self.request.user.id)
 
