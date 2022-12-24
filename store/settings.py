@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['bizuvariedades.herokuapp.com','*']
+ALLOWED_HOSTS = ['thunder-variedades.herokuapp.com','*']
 
 
 # Application definition
@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'products',
     'page',
     'shopping_cart',
+    'orders',
 ]
 
 MIDDLEWARE = [

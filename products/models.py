@@ -23,7 +23,6 @@ class Product(TimeStampedModel):
     description = models.TextField()
     featured = models.BooleanField(default=False)
     is_available = models.BooleanField(default=True)
-    is_paid = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

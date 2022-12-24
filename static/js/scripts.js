@@ -15,26 +15,24 @@ if(header){
 // Dark Theme
 function DarkTheme(){
   localStorage.theme = 'dark'
-  // Icon
-  window.document.getElementsByClassName('bi')[2].classList.remove('bi-moon-stars-fill')
-  window.document.getElementsByClassName('bi')[2].classList.add('bi-brightness-high')
-  window.document.getElementsByClassName('bi')[13].classList.remove('bi-moon-stars-fill')
-  window.document.getElementsByClassName('bi')[13].classList.add('bi-brightness-high')
-
   window.document.body.classList.add('dark')
+  // Icon
+  window.document.getElementsByClassName('moon')[0].classList.remove('bi-moon-stars-fill')
+  window.document.getElementsByClassName('moon')[0].classList.add('bi-brightness-high')
+  window.document.getElementsByClassName('moon')[1].classList.remove('bi-moon-stars-fill')
+  window.document.getElementsByClassName('moon')[1].classList.add('bi-brightness-high')
 }
 
 
 // Light Theme
 function DefaultTheme(){
   localStorage.theme = 'default'
-  // Icon
-  window.document.getElementsByClassName('bi')[2].classList.remove('bi-brightness-high')
-  window.document.getElementsByClassName('bi')[2].classList.add('bi-moon-stars-fill')
-  window.document.getElementsByClassName('bi')[13].classList.remove('bi-brightness-high')
-  window.document.getElementsByClassName('bi')[13].classList.add('bi-moon-stars-fill')
-
   window.document.body.classList.remove('dark')
+  // Icon
+  window.document.getElementsByClassName('moon')[0].classList.remove('bi-brightness-high')
+  window.document.getElementsByClassName('moon')[0].classList.add('bi-moon-stars-fill')
+  window.document.getElementsByClassName('moon')[1].classList.remove('bi-brightness-high')
+  window.document.getElementsByClassName('moon')[1].classList.add('bi-moon-stars-fill')
 }
 
 

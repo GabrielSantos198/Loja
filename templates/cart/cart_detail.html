@@ -39,7 +39,7 @@
         <hr>
 
         {% if user.cpf %}
-        <form action="{% url 'cart:cart_detail' %}">
+        <form action="{% url 'client_orders:create_order' user.id %}">
         {% else %}
         <form action="{% url 'page:config' user.id %}">
         {% endif %}

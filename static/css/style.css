@@ -30,12 +30,12 @@ a:hover{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
 }
 
 .topbar span a{
   font-family: 'Anton', sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   color: #000;
 }
 
@@ -50,6 +50,12 @@ a:hover{
 
 .topbar .topbar-icons a{
   color: gray;
+}
+
+.topbar-procfile-image img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .badge{
@@ -433,6 +439,7 @@ footer .links-list li a:hover{
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  margin-bottom: 30px;
 }
 
 .procfile-config-image{
@@ -940,7 +947,7 @@ footer .links-list li a:hover{
     font-size: 30px;
   }
 
-  .desktop-header div{
+  .desktop-header div a i{
     opacity: .5;
     padding: 5px;
   }
