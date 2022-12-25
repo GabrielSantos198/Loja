@@ -677,15 +677,19 @@ footer .links-list li a:hover{
 }
 
 .cart-summary .btn{
-    background-color: #000;
-    border-color: #000;
     color: white;
     width: 100%;
-    font-size: 0.7rem;
-    margin-top: 4vh;
+    font-size: 0.9rem;
     padding: 1vh;
     border-radius: 0;
 }
+
+.cart-summary .buy-btn{
+    background-color: #000;
+    border-color: #000;
+    margin-top: 15px;
+}
+
 .cart-summary .btn:focus{
     box-shadow: none;
     outline: none;

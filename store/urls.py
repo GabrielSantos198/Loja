@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from payments.views import CreateCheckoutSessionView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +26,8 @@ urlpatterns = [
     path('cart/', include('shopping_cart.urls')),
     path('accounts/', include('allauth.urls')),
     path('create/', include('orders.urls')),
+    path('create-checkout-session/<int:id>/', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
