@@ -5,8 +5,8 @@ from localflavor.br.models import BRStateField
 # Create your models here.
 class Order(TimeStampedModel):
     username = models.CharField(max_length=100)
-    cpf = models.CharField('CPF', blank=False, max_length=11)
-    cep = models.CharField('CEP', blank=False, max_length=8)
+    cpf = models.CharField('CPF', blank=False, max_length=14)
+    cep = models.CharField('CEP', blank=False, max_length=9)
     state = BRStateField('State', blank=False)
     city = models.CharField(max_length=150, blank=False)
     address = models.CharField(max_length=150, blank=False)

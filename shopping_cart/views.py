@@ -39,3 +39,11 @@ def item_clear(request, id):
     product = Product.objects.get(id=id)
     cart.remove(product=product)
     return redirect('cart:cart_detail')
+
+
+@login_required
+def cart_clear(request):
+    cart = Cart(request)
+    cart.clear()
+    return redirect('cart:cart_detail')
+

@@ -46,3 +46,6 @@ class AccountDelete(DeleteView):
     def get_queryset(self):
         return User.objects.filter(id=self.request.user.id)
 
+
+class CancelPageView(TemplateView):
+    template_name = 'cancel.html'

@@ -8,12 +8,14 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 class CreateCheckoutSessionView(View):
     def post(self, request, *args, **kwargs):
+        YOUR_DOMAIN = 'https://thunderstore.herokuapp.com'
+        if settings.DEBUG:
+            YOUR_DOMAIN = 'http://localhost:8000'
         cart_products = Cart(request).session['cart']
         total = 0
         for cart, number in enumerate(cart_products):
             total += int(cart_products[number]['quantity']) * float(cart_products[number]['price'])
         total = total * 100
-        YOUR_DOMAIN = 'https://thunderstore.herokuapp.com'
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=[
@@ -30,7 +32,7 @@ class CreateCheckoutSessionView(View):
             ],
                 mode='payment',
                 success_url=YOUR_DOMAIN + f'/create/order/client/{kwargs["id"]}',
-                cancel_url=YOUR_DOMAIN + '/cancel',
+                cancel_url=YOUR_DOMAIN + '/pagina/cancelado',
             )
         return redirect(checkout_session.url, code=303)
 

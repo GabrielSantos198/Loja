@@ -49,7 +49,7 @@
             {{ cart_total_amount }}0
           <div class="col text-right"></div>
         </div>
-        <div class="col-12"><a class="btn btn-danger" href="">Limpar Carrinho</a></div>
+        <div class="col-12"><a class="btn btn-danger" href="{% url 'cart:cart_clear' %}">Limpar Carrinho</a></div>
         <button class="btn buy-btn">COMPRAR</button>
         </form>
       </div>

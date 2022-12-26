@@ -12,5 +12,5 @@ class User(AbstractUser):
     address = models.CharField(max_length=150, blank=False)
     district = models.CharField(max_length=150, blank=False)
     number = models.CharField(max_length=50, blank=False)
-    complement = models.CharField(max_length=150, blank=False)
+    complement = models.CharField(max_length=150, blank=True)
 
