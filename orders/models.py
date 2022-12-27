@@ -1,12 +1,12 @@
 from django.db import models
 from model_utils.models import TimeStampedModel
-from localflavor.br.models import BRStateField
+from localflavor.br.models import BRCPFField, BRPostalCodeField, BRStateField
 
 # Create your models here.
 class Order(TimeStampedModel):
     username = models.CharField(max_length=100)
-    cpf = models.CharField('CPF', blank=False, max_length=14)
-    cep = models.CharField('CEP', blank=False, max_length=9)
+    cpf = BRCPFField('CPF', blank=False)
+    cep = BRPostalCodeField('CEP', blank=False)
     state = BRStateField('State', blank=False)
     city = models.CharField(max_length=150, blank=False)
     address = models.CharField(max_length=150, blank=False)

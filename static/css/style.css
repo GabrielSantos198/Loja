@@ -160,10 +160,8 @@ input:checked ~ label .hamburger-icon:after{
   display: none;
 }
 
-.dropdown-top select{
-  width: 100px;
-  height: 30px;
-  opacity: .5;
+.translateAndtheme .btn-group button{
+  padding: 3px 5px;
 }
 
 .dropdown-top hr{

@@ -6,7 +6,7 @@
 {% block content %}
 <div class="container my-3">
   <div class="row d-flex justify-content-center">
-    <div class="col-9 col-md-5 mb-3 mb-lg-0">
+    <div class="col-10 col-sm-9 col-md-8 col-lg-7 col-xl-6 col-md-5 mb-5">
       <img class="container-fluid" src="{{ product.image.url }}" alt="">
     </div>
   </div>
@@ -34,7 +34,7 @@
     <h3 class="text-center mb-4">Você também pode gostar.</h3>
       <div class="row">
         {% for merchandise in products %}
-        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
           <div class="card h-100">
             <a href="{% url 'products:product_detail' merchandise.slug %}">
               <img class="card-img-top" src="{{ merchandise.image.url }}" alt="">

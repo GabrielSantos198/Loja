@@ -5,8 +5,8 @@ from localflavor.br.models import BRCPFField, BRPostalCodeField, BRStateField
 # Create your models here.
 class User(AbstractUser):
     procfile_photo = models.ImageField(upload_to='procfile', blank=True)
-    cpf = models.CharField('CPF', blank=False, max_length=14)
-    cep = models.CharField('CEP', blank=False, max_length=9)
+    cpf = BRCPFField('CPF', blank=False)
+    cep = BRPostalCodeField('CEP', blank=False)
     state = BRStateField('State', blank=False)
     city = models.CharField(max_length=150, blank=False)
     address = models.CharField(max_length=150, blank=False)

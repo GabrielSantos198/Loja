@@ -11,7 +11,7 @@
 
   <div class="container my-5">
     <div class="row">
-      <div class="col-4 col-md-3">
+      <div class="col-4 col-md-3 col-lg-2">
         <ul class="list-group mb-3 mb-lg-0">
           <a class="text-decoration-none list-group-item list-group-item-light" href="{% url 'products:products' %}">
             Todos os produtos
@@ -23,10 +23,10 @@
         </ul>
       </div>
 
-      <div class="col-8 col-md-9">
+      <div class="col-8 col-md-9 col-lg-10">
         <div class="row">
           {% for merchandise in products %}
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
             <div class="card h-100">
               <a href="{% url 'products:product_detail' merchandise.slug %}">
                 <img class="card-img-top" src="{{ merchandise.image.url }}" alt="">
